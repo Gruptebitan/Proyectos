@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a738983-e23d-4a00-8b9a-88a7d5d22540">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+perid AS perid,
+pernom AS pernom,
+perpriape AS perpriape,
+persegape AS perpriape
+FROM persona]]>
+	</queryString>
+	<field name="perid" class="java.lang.Integer"/>
+	<field name="pernom" class="java.lang.String"/>
+	<field name="perpriape" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="7dae63b3-922f-4f64-8ad7-e872d3dbc04e"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="9aae22ee-4d37-4617-ac64-a7d9e4adc3db"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Personas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="8ad47933-79b0-4144-bd93-59dfb416d04c"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Reporte de persona Activas]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="119e27a2-b779-41c5-8d4c-f90ecfed7a76"/>
+			</line>
+			<staticText>
+				<reportElement x="90" y="1" width="100" height="20" uuid="f808885e-f801-4c14-a3ab-385a14541ae1"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="1" width="100" height="20" uuid="fab479b6-d5ae-42b1-a8e2-17427f39e1ea"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="1" width="100" height="20" uuid="6be98415-2d4f-4291-af7e-cdfdce019ff3"/>
+				<text><![CDATA[APELLIDO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="20e1b6f6-4d99-48bb-af2c-3b5967852028"/>
+			</line>
+			<textField>
+				<reportElement x="90" y="0" width="100" height="20" uuid="aaf0e87e-8107-4004-8426-0f2aae9a2176"/>
+				<textFieldExpression><![CDATA[$F{perid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="100" height="20" uuid="7e8d2ee5-8703-4ca5-8623-37a020dbeba7"/>
+				<textFieldExpression><![CDATA[$F{pernom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="0" width="100" height="20" uuid="ef523f9a-1be2-40bb-8a8f-1e4234844e67"/>
+				<textFieldExpression><![CDATA[$F{perpriape}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="054c9d16-0ba0-4a82-89be-7c8341b6c827"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="8f8a76e1-890b-45c2-b249-d01a104ff619"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="3e882ac1-748d-4900-9e97-d53c10d28822"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
