@@ -20,11 +20,11 @@ public class esteban_navas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        daopersona persona = new daopersona();
+        daopersona personas = new daopersona();
         frmpersona frmper = new frmpersona();
         try {
            
-            new contrlpersona(frmper,persona).go();
+            new contrlpersona(frmper,personas).go();
             
         } catch (Exception ex) 
         {}
